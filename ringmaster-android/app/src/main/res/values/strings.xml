@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RingMaster</string>
+
+    <!-- Library -->
+    <string name="locale_title">语言</string>
+    <string name="follow_system">跟随系统</string>
+    <string name="diag_title">Format Check</string>
+    <string name="diag_hint">Pick any file to run 4 probes: container → decode → waveform → cut. Failures show the exact step and error.</string>
+    <string name="pick_any_file">Pick a file to start</string>
+    <string name="pick_another">Test another (current: %1$s)</string>
+    <string name="diagnosing">Diagnosing…</string>
+    <string name="all_passed">All passed</string>
+    <string name="has_failures">Some steps failed</string>
+    <string name="empty_title">No ringtones yet</string>
+    <string name="empty_subtitle">Cut the part you love most from a song</string>
+    <string name="new_ringtone">Pick a song and make a ringtone</string>
+    <string name="seconds">%1$d s</string>
+    <string name="current_default">Current default ringtone</string>
+    <string name="tap_to_edit">Tap to re-edit</string>
+    <string name="set_phone">Set as phone ringtone</string>
+    <string name="set_notification">Set as notification</string>
+    <string name="set_alarm">Set as alarm</string>
+    <string name="rename">Rename</string>
+    <string name="share">Share</string>
+    <string name="share_friend">Share with friends</string>
+    <string name="set_contact">Set for a contact</string>
+    <string name="delete">Delete</string>
+    <string name="rename_title">Rename ringtone</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="renamed">Renamed</string>
+    <string name="rename_failed">Rename failed</string>
+    <string name="deleted">Deleted</string>
+    <string name="delete_failed">Delete failed (only ringtones created here can be deleted)</string>
+    <string name="set_done">Set as %1$s</string>
+    <string name="set_failed">Set failed</string>
+    <string name="need_contact_permission">Permission to modify contacts is required for contact ringtones</string>
+    <string name="set_contact_done">Set as this contact\'s ringtone</string>
+    <string name="need_write_settings">Please allow RingMaster to modify system settings, then retry</string>
+    <string name="granted_auto">Will complete automatically after you return</string>
+    <string name="share_failed">Cannot share: %1$s</string>
+
+    <!-- WriteSettings dialog -->
+    <string name="ws_dialog_title">System settings permission needed</string>
+    <string name="ws_dialog_text">RingMaster uses this only to save ringtones to the system and set them as default — nothing else.\n\nYou can also skip it: the ringtone is already saved. Set it manually:\nSystem settings → Sound → Phone ringtone → pick your ringtone.</string>
+    <string name="ws_grant">Grant</string>
+    <string name="ws_manual">Manual setup</string>
+
+    <!-- Editor -->
+    <string name="new_ringtone_title">New ringtone</string>
+    <string name="full_selection">Full track %1$d s · Selected %2$s</string>
+    <string name="back">Back</string>
+    <string name="empty_editor_title">Pick a song or video</string>
+    <string name="empty_editor_subtitle">Smart cut will find the best part</string>
+    <string name="pick_file">Pick file</string>
+    <string name="gesture_hint">Pinch to zoom · Drag to pan · Tap to preview</string>
+    <string name="start_label">Start</string>
+    <string name="end_label">End</string>
+    <string name="move_start_back">Move start back 0.1 s</string>
+    <string name="move_start_forward">Move start forward 0.1 s</string>
+    <string name="move_end_back">Move end back 0.1 s</string>
+    <string name="move_end_forward">Move end forward 0.1 s</string>
+    <string name="fade_in">Fade in %1$s</string>
+    <string name="fade_out">Fade out %1$s</string>
+    <string name="off">Off</string>
+    <string name="change_file">Pick another file</string>
+    <string name="smart_cut">Smart cut</string>
+    <string name="preview">Preview</string>
+    <string name="stop">Stop</string>
+    <string name="export_ringtone">Export ringtone</string>
+    <string name="analyzing">Analyzing waveform…</string>
+    <string name="smart_searching">Finding the best part…</string>
+    <string name="preparing_preview">Preparing preview…</string>
+    <string name="exporting">Cutting and exporting…</string>
+    <string name="sheet_saved_title">Ringtone saved to your library</string>
+    <string name="sheet_saved_text">Set as default? (You can also find it in your library later)</string>
+    <string name="set">Set</string>
+    <string name="contact_android_only">Set for a contact (Android only)</string>
+    <string name="choose">Choose</string>
+    <string name="export_failed">Export failed: %1$s</string>
+    <string name="export_save_failed">Exported, but saving failed: %1$s</string>
+    <string name="preview_failed">Preview failed: %1$s</string>
+    <string name="cannot_read">Cannot read the audio: %1$s</string>
+    <string name="wma_unsupported">WMA is not supported on Android. Convert it to MP3 or M4A first.</string>
+    <string name="saved_library">Saved to ringtone library</string>
+    <string name="saved_manual_later">Ringtone saved. You can set it manually later.</string>
+    <string name="smart_found">Smart cut: %1$s–%2$s</string>
+    <string name="smart_fallback">No clear highlight found — a stable part was selected. Fine-tune manually if you like.</string>
+    <string name="smart_done">Highlight selected — fine-tune and export</string>
+    <string name="smart_odd">This song is special — the most stable part was selected</string>
+    <string name="waveform_log">Waveform %1$d buckets · %2$d s · %3$d ms</string>
+    <string name="extract_failed">Waveform extract failed: %1$s</string>
+    <string name="export_log">Exported %1$d ms AAC 192 k · decode %2$d ms · encode %3$d ms · total %4$d ms</string>
+    <string name="reset_defaults">Reset</string>
+    <string name="gesture_hint2">Pinch to zoom · Drag waveform to pan · Tap to preview</string>
+    <string name="not_standard_audio">Not a standard audio file — it may be encrypted cache from a music app (e.g. KuGou KGG). Use an unencrypted file.</string>
+    <string name="loop_preview">Loop preview</string>
+    <string name="undo_selection">Undo selection</string>
+    <string name="share_card">Share waveform card</string>
+    <string name="about_title">About</string>
+    <string name="privacy_title">Privacy</string>
+    <string name="about_contact">Contact: yha96@163.com</string>
+    <string name="about_privacy_body">RingMaster does not collect, transmit, or share any personal data. All audio processing happens locally on your device.
+
+Media access: files are read only when you pick them.
+
+WRITE_SETTINGS (optional): saves ringtones into the system library and sets them as default.
+
+WRITE_CONTACTS (optional): assigns a ringtone to the single contact you choose — used only when you tap that feature, and your contact list is never read.</string>
+    <string name="watermark_avoided">Trailing watermark detected — excluded from smart cut</string>
+    <string name="smart_candidate">Option %1$d of %2$d · %3$s–%4$s</string>
+    <string name="start_end_hint">Tap Start/End while previewing to set the cut points at the playhead</string>
+    <string name="re_edit">Re-edit</string>
+    <string name="tap_to_play">Tap to play</string>
+    <string name="support_dev">Support the developer</string>
+    <string name="about_diag_link">Format check (diagnostics)</string>
+</resources>

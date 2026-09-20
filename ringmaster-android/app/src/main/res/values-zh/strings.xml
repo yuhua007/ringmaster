@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RingMaster</string>
+
+    <!-- Library -->
+    <string name="locale_title">语言</string>
+    <string name="follow_system">跟随系统</string>
+    <string name="diag_title">格式自测</string>
+    <string name="diag_hint">选一个文件跑四段探针：容器识别 → 解码/波形 → 剪切导出。失败项会显示具体断点与异常。</string>
+    <string name="pick_any_file">选择文件开始自测</string>
+    <string name="pick_another">再测一个（当前: %1$s）</string>
+    <string name="diagnosing">诊断中…</string>
+    <string name="all_passed">全部通过</string>
+    <string name="has_failures">存在失败项</string>
+    <string name="empty_title">还没有你的铃声</string>
+    <string name="empty_subtitle">从一首歌里剪出最想听的那一段</string>
+    <string name="new_ringtone">选一首歌，开始制作铃声</string>
+    <string name="seconds">%1$d 秒</string>
+    <string name="current_default">当前默认铃声</string>
+    <string name="tap_to_edit">点击重新编辑</string>
+    <string name="set_phone">设为电话铃声</string>
+    <string name="set_notification">设为通知铃声</string>
+    <string name="set_alarm">设为闹钟铃声</string>
+    <string name="rename">重命名</string>
+    <string name="share">Share</string>
+    <string name="share_friend">分享给朋友</string>
+    <string name="set_contact">设为联系人专属铃声</string>
+    <string name="delete">删除</string>
+    <string name="rename_title">重命名铃声</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="renamed">已重命名</string>
+    <string name="rename_failed">重命名失败</string>
+    <string name="deleted">已删除</string>
+    <string name="delete_failed">删除失败（仅能删除本应用创建的铃声）</string>
+    <string name="set_done">已设为%1$s</string>
+    <string name="set_failed">设置失败</string>
+    <string name="need_contact_permission">需要「修改联系人」权限才能设置专属铃声</string>
+    <string name="set_contact_done">已设为该联系人的专属铃声</string>
+    <string name="need_write_settings">请在系统设置中允许 RingMaster 修改系统设置后重试</string>
+    <string name="granted_auto">授权后回到 App 会自动完成设置</string>
+    <string name="share_failed">无法分享：%1$s</string>
+
+    <!-- WriteSettings dialog -->
+    <string name="ws_dialog_title">需要「修改系统设置」权限</string>
+    <string name="ws_dialog_text">RingMaster 只用它把铃声写入系统铃声库并设为默认，不做其他任何事。\n\n也可以不授权：铃声已保存在系统铃声目录，你可以手动设置——\n系统设置 → 声音与触感 → 电话铃声 → 选择你的铃声</string>
+    <string name="ws_grant">去授权</string>
+    <string name="ws_manual">手动设置</string>
+
+    <!-- Editor -->
+    <string name="new_ringtone_title">新建铃声</string>
+    <string name="full_selection">全曲 %1$d 秒 · 选段 %2$s</string>
+    <string name="back">返回</string>
+    <string name="empty_editor_title">选择一首歌或一段视频</string>
+    <string name="empty_editor_subtitle">智能将找到最好听的高潮片段</string>
+    <string name="pick_file">选择文件</string>
+    <string name="gesture_hint">双指捏合缩放 · 双指拖动平移 · 点击试听</string>
+    <string name="start_label">起</string>
+    <string name="end_label">止</string>
+    <string name="move_start_back">起点前移 0.1 秒</string>
+    <string name="move_start_forward">起点后移 0.1 秒</string>
+    <string name="move_end_back">终点前移 0.1 秒</string>
+    <string name="move_end_forward">终点后移 0.1 秒</string>
+    <string name="fade_in">淡入 %1$s</string>
+    <string name="fade_out">淡出 %1$s</string>
+    <string name="off">关</string>
+    <string name="change_file">换个文件</string>
+    <string name="smart_cut">智能自动剪辑</string>
+    <string name="preview">试听选段</string>
+    <string name="stop">停止试听</string>
+    <string name="export_ringtone">导出铃声</string>
+    <string name="analyzing">分析波形中…</string>
+    <string name="smart_searching">智能寻找高潮片段…</string>
+    <string name="preparing_preview">准备试听…</string>
+    <string name="exporting">剪切导出中…</string>
+    <string name="sheet_saved_title">铃声已保存到铃声库</string>
+    <string name="sheet_saved_text">要设为系统默认铃声吗？（不选也能在铃声库中找到）</string>
+    <string name="set">设置</string>
+    <string name="contact_android_only">设为联系人专属铃声（安卓独有）</string>
+    <string name="choose">选择</string>
+    <string name="export_failed">导出失败：%1$s</string>
+    <string name="export_save_failed">导出成功但保存失败：%1$s</string>
+    <string name="preview_failed">试听失败：%1$s</string>
+    <string name="cannot_read">无法读取该文件的音频：%1$s</string>
+    <string name="wma_unsupported">WMA 格式不受系统支持，请先转换为 MP3/M4A</string>
+    <string name="saved_library">已保存到铃声库</string>
+    <string name="saved_manual_later">铃声已保存在铃声库，可稍后手动设置</string>
+    <string name="smart_found">智能高潮: %1$s–%2$s</string>
+    <string name="smart_fallback">未找到明显高潮，已选稳定片段（可手动微调）</string>
+    <string name="smart_done">已选中高潮片段，可微调后导出</string>
+    <string name="smart_odd">这首歌有点特别，智能分析选了最稳定的片段</string>
+    <string name="waveform_log">波形 %1$d 桶 · %2$d秒 · %3$dms</string>
+    <string name="extract_failed">波形提取失败: %1$s</string>
+    <string name="export_log">导出 %1$dms AAC192k · 解码%2$dms 编码%3$dms · 共%4$dms</string>
+    <string name="reset_defaults">恢复默认</string>
+    <string name="gesture_hint2">双指缩放 · 拖动波形平移 · 点击试听</string>
+    <string name="not_standard_audio">这不是标准音频文件——可能是音乐 App 的加密缓存（如酷狗 KGG）。请换用未加密的文件</string>
+    <string name="loop_preview">循环试听</string>
+    <string name="undo_selection">撤销选区</string>
+    <string name="share_card">分享波形卡片</string>
+    <string name="about_title">关于</string>
+    <string name="privacy_title">隐私</string>
+    <string name="about_contact">联系我们：yha96@163.com</string>
+    <string name="about_privacy_body">RingMaster 不收集、不传输、不共享任何个人数据。所有音频处理均在你的设备本地完成。
+
+媒体访问：仅在你主动选择文件时读取。
+
+WRITE_SETTINGS（可选）：用于把铃声写入系统铃声库并设为默认。
+
+WRITE_CONTACTS（可选）：仅在使用「联系人专属铃声」时为你选择的单个联系人写入设置——不会读取你的通讯录。</string>
+    <string name="watermark_avoided">检测到片尾水印，智能剪辑已自动避开</string>
+    <string name="smart_candidate">候选 %1$d/%2$d · %3$s–%4$s</string>
+    <string name="start_end_hint">试听中点「起/止」即可在当前位置设切点</string>
+    <string name="re_edit">重新编辑</string>
+    <string name="tap_to_play">点击播放</string>
+    <string name="support_dev">打赏支持开发者</string>
+    <string name="about_diag_link">格式自测（诊断工具）</string>
+</resources>

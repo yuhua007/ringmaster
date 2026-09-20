@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>RingMaster 图标方案 V2（高质感版）</title>
+<style>
+  body { background:#080808; color:#F5F5F2; font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; margin:0; padding:40px 24px; }
+  h1 { font-weight:600; font-size:22px; }
+  h2 { font-weight:600; font-size:15px; color:#C8A24B; margin:48px 0 16px; letter-spacing:.5px;}
+  .sub { color:#9E9E99; font-size:13px; margin-top:6px;}
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; max-width:1150px;}
+  .card { background:#141414; border:1px solid rgba(255,255,255,.07); border-radius:22px; padding:26px; }
+  .card h3 { margin:0 0 4px; font-size:16px;}
+  .card p { margin:0; color:#9E9E99; font-size:12.5px; line-height:1.65;}
+  .icon-row { display:flex; gap:22px; align-items:center; margin:20px 0 14px;}
+  .icon { width:104px; height:104px; display:block;}
+  .squircle { border-radius:27%; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.6), 0 2px 8px rgba(0,0,0,.4);}
+  .circle { border-radius:50%; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.6);}
+  .tag { font-size:11px; color:#5E5E5B; text-align:center; margin-top:6px;}
+  .home { background:linear-gradient(160deg,#1b1d24,#101216); border-radius:28px; padding:28px 22px; max-width:430px;}
+  .home-row { display:flex; justify-content:space-around; align-items:flex-start;}
+  .app { display:flex; flex-direction:column; align-items:center; gap:6px;}
+  .app .icon { width:56px; height:56px;}
+  .app span { font-size:10px; color:#cfcfc9;}
+  .dummy { width:56px; height:56px; border-radius:27%; background:#26282f;}
+  .dummy.d2{background:#202226}.dummy.d3{background:#2c2932}.dummy.d4{background:#222829}
+  .phone { width:250px; height:500px; background:#121212; border:6px solid #2a2a2d; border-radius:36px; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative;}
+  .phone .icon{width:92px;height:92px;margin-bottom:22px}
+  .phone .slogan{color:#9E9E99;font-size:13px;letter-spacing:2px}
+  .note { color:#5E5E5B; font-size:12px; margin-top:24px; line-height:1.8; max-width:780px;}
+  em { color:#C8A24B; font-style:normal;}
+</style>
+</head>
+<body>
+
+<!-- 共享渐变定义 -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- 鎏金波柱渐变（3 档亮度） -->
+    <linearGradient id="barL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6DE9C"/><stop offset="1" stop-color="#6E5620"/>
+    </linearGradient>
+    <linearGradient id="barM" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFEFC2"/><stop offset="1" stop-color="#9A7A2E"/>
+    </linearGradient>
+    <linearGradient id="barS" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D9BC74"/><stop offset="1" stop-color="#5A4718"/>
+    </linearGradient>
+    <!-- 暖黑背景 -->
+    <radialGradient id="bgWarm" cx="0.5" cy="0.36" r="0.85">
+      <stop offset="0" stop-color="#292217"/><stop offset="0.6" stop-color="#161209"/><stop offset="1" stop-color="#0B0906"/>
+    </radialGradient>
+    <!-- 底部金色光晕 -->
+    <radialGradient id="glowGold" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#C8A24B" stop-opacity="0.32"/><stop offset="1" stop-color="#C8A24B" stop-opacity="0"/>
+    </radialGradient>
+    <!-- R 字母鎏金 -->
+    <linearGradient id="goldR" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#F2D894"/><stop offset="0.55" stop-color="#C8A24B"/><stop offset="1" stop-color="#8A6C26"/>
+    </linearGradient>
+    <!-- 球体（金） -->
+    <radialGradient id="ballGold" cx="0.35" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#FFEEC0"/><stop offset="0.45" stop-color="#DCB75F"/><stop offset="1" stop-color="#77591D"/>
+    </radialGradient>
+    <!-- 球体（青） -->
+    <radialGradient id="ballCyan" cx="0.35" cy="0.3" r="0.9">
+      <stop offset="0" stop-color="#C8F6F2"/><stop offset="0.45" stop-color="#46D6CE"/><stop offset="1" stop-color="#166B67"/>
+    </radialGradient>
+    <!-- 冷背景 -->
+    <radialGradient id="bgCool" cx="0.5" cy="0.36" r="0.85">
+      <stop offset="0" stop-color="#12211f"/><stop offset="0.6" stop-color="#0a1312"/><stop offset="1" stop-color="#050a09"/>
+    </radialGradient>
+    <!-- 冷波柱 -->
+    <linearGradient id="barCL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#B9F4EF"/><stop offset="1" stop-color="#155E5A"/>
+    </linearGradient>
+    <linearGradient id="barCM" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E4FFFC"/><stop offset="1" stop-color="#2A9C94"/>
+    </linearGradient>
+    <linearGradient id="barCS" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8CD9D3"/><stop offset="1" stop-color="#114845"/>
+    </linearGradient>
+    <radialGradient id="glowCyan" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3FD0C9" stop-opacity="0.30"/><stop offset="1" stop-color="#3FD0C9" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 环渐变 -->
+    <linearGradient id="ringGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F2D894"/><stop offset="1" stop-color="#8A6C26"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<h1>RingMaster · 图标方案 V2</h1>
+<div class="sub">按 2026 高水位标准重制：动态渐变 · 光影层次 · 立体质感 — 均可用 Android 矢量渐变 1:1 落地</div>
+
+<!-- ══════════════ A 鎏金均衡器 ══════════════ -->
+<div class="grid">
+
+  <div class="card">
+    <h3>A · 鎏金均衡器（暖金）— 推荐</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <ellipse cx="54" cy="82" rx="34" ry="12" fill="url(#glowGold)"/>
+        <g stroke-linecap="round" stroke-width="7">
+          <line x1="28" y1="50" x2="28" y2="58" stroke="url(#barS)"/>
+          <line x1="37" y1="44" x2="37" y2="64" stroke="url(#barL)"/>
+          <line x1="46" y1="36" x2="46" y2="72" stroke="url(#barM)"/>
+          <line x1="54" y1="30" x2="54" y2="78" stroke="url(#barM)"/>
+          <line x1="62" y1="36" x2="62" y2="72" stroke="url(#barM)"/>
+          <line x1="71" y1="44" x2="71" y2="64" stroke="url(#barL)"/>
+          <line x1="80" y1="50" x2="80" y2="58" stroke="url(#barS)"/>
+        </g>
+        <circle cx="54" cy="30" r="2.2" fill="#FFF6DC" opacity="0.9"/>
+        <circle cx="46" cy="36" r="1.6" fill="#FFF6DC" opacity="0.7"/>
+        <circle cx="62" cy="36" r="1.6" fill="#FFF6DC" opacity="0.7"/>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <ellipse cx="54" cy="82" rx="30" ry="11" fill="url(#glowGold)"/>
+        <g stroke-linecap="round" stroke-width="7">
+          <line x1="33" y1="50" x2="33" y2="58" stroke="url(#barS)"/>
+          <line x1="41" y1="44" x2="41" y2="64" stroke="url(#barL)"/>
+          <line x1="49" y1="36" x2="49" y2="72" stroke="url(#barM)"/>
+          <line x1="54" y1="30" x2="54" y2="78" stroke="url(#barM)"/>
+          <line x1="59" y1="36" x2="59" y2="72" stroke="url(#barM)"/>
+          <line x1="67" y1="44" x2="67" y2="64" stroke="url(#barL)"/>
+          <line x1="75" y1="50" x2="75" y2="58" stroke="url(#barS)"/>
+        </g>
+        <circle cx="54" cy="30" r="2" fill="#FFF6DC" opacity="0.9"/>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>暖黑径向渐变底 + 三档鎏金波柱（每柱独立明暗渐变）+ 柱顶高光星点 + 底部金色光晕反射。对标 Spotify 的光效语言，深色主屏上极其亮眼。</p>
+  </div>
+
+  <!-- ══════════════ B 声波粒子 ══════════════ -->
+  <div class="card">
+    <h3>B · 声波粒子（soft 3D）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <ellipse cx="54" cy="84" rx="32" ry="10" fill="url(#glowGold)" opacity="0.7"/>
+        <ellipse cx="38" cy="74" rx="7" ry="2.6" fill="#000" opacity="0.35"/>
+        <ellipse cx="56" cy="78" rx="9" ry="3" fill="#000" opacity="0.4"/>
+        <ellipse cx="74" cy="72" rx="7" ry="2.6" fill="#000" opacity="0.35"/>
+        <circle cx="38" cy="62" r="9" fill="url(#ballGold)"/>
+        <circle cx="35" cy="59" r="2.6" fill="#FFFBEA" opacity="0.85"/>
+        <circle cx="56" cy="44" r="12.5" fill="url(#ballGold)"/>
+        <circle cx="52" cy="40" r="3.4" fill="#FFFBEA" opacity="0.9"/>
+        <circle cx="74" cy="60" r="10" fill="url(#ballGold)"/>
+        <circle cx="71" cy="57" r="2.8" fill="#FFFBEA" opacity="0.85"/>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <circle cx="42" cy="62" r="8" fill="url(#ballGold)"/>
+        <circle cx="39" cy="59" r="2.2" fill="#FFFBEA" opacity="0.85"/>
+        <circle cx="56" cy="46" r="11" fill="url(#ballGold)"/>
+        <circle cx="52" cy="42" r="3" fill="#FFFBEA" opacity="0.9"/>
+        <circle cx="70" cy="60" r="9" fill="url(#ballGold)"/>
+        <circle cx="67" cy="57" r="2.5" fill="#FFFBEA" opacity="0.85"/>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>2026 流行的 plush 立体风：三颗金色光面圆球沿声波弧线跳动，球体带高光与柔和落影。亲和、有玩具感，差异化最强。</p>
+  </div>
+
+  <!-- ══════════════ C 鎏金 R ══════════════ -->
+  <div class="card">
+    <h3>C · 鎏金 R（bold minimal）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <ellipse cx="54" cy="88" rx="30" ry="9" fill="url(#glowGold)"/>
+        <text x="54" y="73" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="64" fill="url(#goldR)">R</text>
+        <text x="54" y="71" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="64" fill="#FFF3D6" opacity="0.12">R</text>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <text x="54" y="72" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="60" fill="url(#goldR)">R</text>
+        <text x="54" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="60" fill="#FFF3D6" opacity="0.12">R</text>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>一颗鎏金粗体 R 占满画布（bold minimal 路线），叠一层顶部高光斜面。像奢侈品 logo，最"贵"，但需要字形打磨到位（落地时手绘专属字形而非系统字体）。</p>
+  </div>
+
+  <!-- ══════════════ D 光环 ══════════════ -->
+  <div class="card">
+    <h3>D · 声波光环（光影版）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <ellipse cx="54" cy="54" rx="36" ry="36" fill="url(#glowGold)" opacity="0.55"/>
+        <g fill="none" stroke-linecap="round" transform="rotate(-18 54 54)">
+          <path d="M54 39 A15 15 0 1 1 69 54" stroke="url(#ringGold)" stroke-width="5.5"/>
+          <path d="M54 29 A25 25 0 1 1 79 54" stroke="url(#ringGold)" stroke-width="5" opacity="0.66"/>
+          <path d="M54 19 A35 35 0 1 1 89 54" stroke="url(#ringGold)" stroke-width="4.5" opacity="0.38"/>
+        </g>
+        <circle cx="54" cy="54" r="7.5" fill="url(#ballGold)"/>
+        <circle cx="51.5" cy="51.5" r="2.2" fill="#FFFBEA" opacity="0.95"/>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm)"/>
+        <g fill="none" stroke-linecap="round" transform="rotate(-18 54 54)">
+          <path d="M54 41 A13 13 0 1 1 67 54" stroke="url(#ringGold)" stroke-width="5"/>
+          <path d="M54 32 A22 22 0 1 1 76 54" stroke="url(#ringGold)" stroke-width="4.6" opacity="0.66"/>
+          <path d="M54 23 A31 31 0 1 1 85 54" stroke="url(#ringGold)" stroke-width="4.2" opacity="0.38"/>
+        </g>
+        <circle cx="54" cy="54" r="6.5" fill="url(#ballGold)"/>
+        <circle cx="52" cy="52" r="1.9" fill="#FFFBEA" opacity="0.95"/>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>第一版 C 方案的光影进化：渐变描边光环（由亮到暗到透明衰减）+ 中央立体光面金球 + 整体柔光。铃声"扩散"意象保留，质感翻倍。</p>
+  </div>
+
+  <!-- ══════════════ E 冷青均衡器 ══════════════ -->
+  <div class="card">
+    <h3>E · 鎏光均衡器（冷青）— 顺带定主色</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgCool)"/>
+        <ellipse cx="54" cy="82" rx="34" ry="12" fill="url(#glowCyan)"/>
+        <g stroke-linecap="round" stroke-width="7">
+          <line x1="28" y1="50" x2="28" y2="58" stroke="url(#barCS)"/>
+          <line x1="37" y1="44" x2="37" y2="64" stroke="url(#barCL)"/>
+          <line x1="46" y1="36" x2="46" y2="72" stroke="url(#barCM)"/>
+          <line x1="54" y1="30" x2="54" y2="78" stroke="url(#barCM)"/>
+          <line x1="62" y1="36" x2="62" y2="72" stroke="url(#barCM)"/>
+          <line x1="71" y1="44" x2="71" y2="64" stroke="url(#barCL)"/>
+          <line x1="80" y1="50" x2="80" y2="58" stroke="url(#barCS)"/>
+        </g>
+        <circle cx="54" cy="30" r="2.2" fill="#F0FFFE" opacity="0.9"/>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgCool)"/>
+        <ellipse cx="54" cy="82" rx="30" ry="11" fill="url(#glowCyan)"/>
+        <g stroke-linecap="round" stroke-width="7">
+          <line x1="33" y1="50" x2="33" y2="58" stroke="url(#barCS)"/>
+          <line x1="41" y1="44" x2="41" y2="64" stroke="url(#barCL)"/>
+          <line x1="49" y1="36" x2="49" y2="72" stroke="url(#barCM)"/>
+          <line x1="54" y1="30" x2="54" y2="78" stroke="url(#barCM)"/>
+          <line x1="59" y1="36" x2="59" y2="72" stroke="url(#barCM)"/>
+          <line x1="67" y1="44" x2="67" y2="64" stroke="url(#barCL)"/>
+          <line x1="75" y1="50" x2="75" y2="58" stroke="url(#barCS)"/>
+        </g>
+        <circle cx="54" cy="30" r="2" fill="#F0FFFE" opacity="0.9"/>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>方案 A 的冷青版（选 E = 主色一并切冷青）。青色光效在深底上更"科技"，但音频赛道撞色风险高于暖金。</p>
+  </div>
+</div>
+
+<!-- ══════════════ 主屏效果 ══════════════ -->
+<h2>主屏实际效果</h2>
+<div class="home"><div class="home-row">
+  <div class="app"><div class="dummy"></div><span>相册</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm)"/><ellipse cx="54" cy="82" rx="34" ry="12" fill="url(#glowGold)"/><g stroke-linecap="round" stroke-width="7"><line x1="28" y1="50" x2="28" y2="58" stroke="url(#barS)"/><line x1="37" y1="44" x2="37" y2="64" stroke="url(#barL)"/><line x1="46" y1="36" x2="46" y2="72" stroke="url(#barM)"/><line x1="54" y1="30" x2="54" y2="78" stroke="url(#barM)"/><line x1="62" y1="36" x2="62" y2="72" stroke="url(#barM)"/><line x1="71" y1="44" x2="71" y2="64" stroke="url(#barL)"/><line x1="80" y1="50" x2="80" y2="58" stroke="url(#barS)"/></g><circle cx="54" cy="30" r="2.2" fill="#FFF6DC" opacity="0.9"/></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d2"></div><span>天气</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm)"/><ellipse cx="38" cy="74" rx="7" ry="2.6" fill="#000" opacity="0.35"/><ellipse cx="56" cy="78" rx="9" ry="3" fill="#000" opacity="0.4"/><ellipse cx="74" cy="72" rx="7" ry="2.6" fill="#000" opacity="0.35"/><circle cx="38" cy="62" r="9" fill="url(#ballGold)"/><circle cx="35" cy="59" r="2.6" fill="#FFFBEA" opacity="0.85"/><circle cx="56" cy="44" r="12.5" fill="url(#ballGold)"/><circle cx="52" cy="40" r="3.4" fill="#FFFBEA" opacity="0.9"/><circle cx="74" cy="60" r="10" fill="url(#ballGold)"/><circle cx="71" cy="57" r="2.8" fill="#FFFBEA" opacity="0.85"/></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d3"></div><span>时钟</span></div>
+</div>
+<div class="home-row" style="margin-top:22px">
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm)"/><ellipse cx="54" cy="88" rx="30" ry="9" fill="url(#glowGold)"/><text x="54" y="73" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="64" fill="url(#goldR)">R</text></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d4"></div><span>地图</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm)"/><ellipse cx="54" cy="54" rx="36" ry="36" fill="url(#glowGold)" opacity="0.55"/><g fill="none" stroke-linecap="round" transform="rotate(-18 54 54)"><path d="M54 39 A15 15 0 1 1 69 54" stroke="url(#ringGold)" stroke-width="5.5"/><path d="M54 29 A25 25 0 1 1 79 54" stroke="url(#ringGold)" stroke-width="5" opacity="0.66"/><path d="M54 19 A35 35 0 1 1 89 54" stroke="url(#ringGold)" stroke-width="4.5" opacity="0.38"/></g><circle cx="54" cy="54" r="7.5" fill="url(#ballGold)"/><circle cx="51.5" cy="51.5" r="2.2" fill="#FFFBEA" opacity="0.95"/></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy"></div><span>设置</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgCool)"/><ellipse cx="54" cy="82" rx="34" ry="12" fill="url(#glowCyan)"/><g stroke-linecap="round" stroke-width="7"><line x1="28" y1="50" x2="28" y2="58" stroke="url(#barCS)"/><line x1="37" y1="44" x2="37" y2="64" stroke="url(#barCL)"/><line x1="46" y1="36" x2="46" y2="72" stroke="url(#barCM)"/><line x1="54" y1="30" x2="54" y2="78" stroke="url(#barCM)"/><line x1="62" y1="36" x2="62" y2="72" stroke="url(#barCM)"/><line x1="71" y1="44" x2="71" y2="64" stroke="url(#barCL)"/><line x1="80" y1="50" x2="80" y2="58" stroke="url(#barCS)"/></g><circle cx="54" cy="30" r="2.2" fill="#F0FFFE" opacity="0.9"/></svg><span>RingMaster</span></div>
+</div></div>
+
+<div class="note">
+  <em>说明</em>：本批全部采用渐变/光影/立体质感技法（对齐 2026 图标趋势：动态渐变 + soft 3D + bold minimal），且只用了 Android 矢量图标支持的特性（线性和径向渐变、透明度），选中后可 1:1 落地为自适应图标。<br>
+  <em>我的推荐</em>：A（鎏金均衡器）——光效层次最丰富，深色主屏跳出感最强，和 App 内的波形视觉血统一致；C（鎏金 R）次选，最高端但依赖字形打磨。
+</div>
+
+</body>
+</html>

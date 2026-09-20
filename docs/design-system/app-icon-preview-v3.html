@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>RingMaster 图标 V3（图标库语言版）</title>
+<style>
+  body { background:#080808; color:#F5F5F2; font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; margin:0; padding:40px 24px; }
+  h1 { font-weight:600; font-size:22px; }
+  h2 { font-weight:600; font-size:14px; color:#C8A24B; margin:44px 0 14px; letter-spacing:.5px;}
+  .sub { color:#9E9E99; font-size:13px; margin-top:6px;}
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(310px,1fr)); gap:20px; max-width:1150px;}
+  .card { background:#141414; border:1px solid rgba(255,255,255,.07); border-radius:22px; padding:24px; }
+  .card h3 { margin:0 0 4px; font-size:15.5px;}
+  .card p { margin:0; color:#9E9E99; font-size:12.5px; line-height:1.65;}
+  .src { display:inline-block; margin-top:8px; font-size:11px; color:#6f6f68; border:1px solid rgba(255,255,255,.1); border-radius:99px; padding:2px 10px;}
+  .icon-row { display:flex; gap:22px; align-items:center; margin:20px 0 12px;}
+  .icon { width:104px; height:104px; display:block;}
+  .squircle { border-radius:27%; overflow:hidden; box-shadow:0 8px 26px rgba(0,0,0,.55);}
+  .circle { border-radius:50%; overflow:hidden; box-shadow:0 8px 26px rgba(0,0,0,.55);}
+  .tag { font-size:11px; color:#5E5E5B; text-align:center; margin-top:6px;}
+  .home { background:linear-gradient(160deg,#1b1d24,#101216); border-radius:28px; padding:28px 22px; max-width:430px;}
+  .home-row { display:flex; justify-content:space-around; align-items:flex-start;}
+  .app { display:flex; flex-direction:column; align-items:center; gap:6px;}
+  .app .icon { width:56px; height:56px;}
+  .app span { font-size:10px; color:#cfcfc9;}
+  .dummy { width:56px; height:56px; border-radius:27%; background:#26282f;}
+  .dummy.d2{background:#202226}.dummy.d3{background:#2c2932}
+  .note { color:#5E5E5B; font-size:12px; margin-top:24px; line-height:1.8; max-width:800px;}
+  em { color:#C8A24B; font-style:normal;}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <radialGradient id="bgWarm3" cx="0.5" cy="0.38" r="0.9">
+      <stop offset="0" stop-color="#231d13"/><stop offset="1" stop-color="#0d0b07"/>
+    </radialGradient>
+    <radialGradient id="goldBall3" cx="0.36" cy="0.3" r="0.95">
+      <stop offset="0" stop-color="#F5DF9F"/><stop offset="0.5" stop-color="#C8A24B"/><stop offset="1" stop-color="#7d611f"/>
+    </radialGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6DE9C"/><stop offset="1" stop-color="#8a6c26"/>
+    </linearGradient>
+    <radialGradient id="glow3" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#C8A24B" stop-opacity="0.28"/><stop offset="1" stop-color="#C8A24B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
+
+<h1>RingMaster · 图标 V3（图标库设计语言版）</h1>
+<div class="sub">纪律执行：统一笔宽 7/108（≈1.5/24）· 圆头端点 · ≤5 个图形原语 · ≤2 色 — 极简线派 vs 光效派</div>
+
+<div class="grid">
+
+  <!-- A 一线波 -->
+  <div class="card">
+    <h3>A · 一线波（极简线派）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <g stroke="#C8A24B" stroke-width="7" stroke-linecap="round">
+          <line x1="36" y1="46" x2="36" y2="62"/>
+          <line x1="47" y1="38" x2="47" y2="70"/>
+          <line x1="58" y1="30" x2="58" y2="78"/>
+          <line x1="69" y1="42" x2="69" y2="66"/>
+        </g>
+      </svg><div class="tag">方圆</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <g stroke="#C8A24B" stroke-width="7" stroke-linecap="round">
+          <line x1="39" y1="46" x2="39" y2="62"/>
+          <line x1="49" y1="38" x2="49" y2="70"/>
+          <line x1="59" y1="30" x2="59" y2="78"/>
+          <line x1="69" y1="42" x2="69" y2="66"/>
+        </g>
+      </svg><div class="tag">圆形</div></div>
+    </div>
+    <p>Heroicons 语言：恒定笔宽、圆头、纯几何、零装饰。四根线不对称山形（重心偏左）带一点节奏感。越小越清晰的类型。</p>
+    <span class="src">语言来源：Heroicons</span>
+  </div>
+
+  <!-- B 双色线 -->
+  <div class="card">
+    <h3>B · 双色线波（双色线派）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <g stroke-width="7" stroke-linecap="round">
+          <line x1="33" y1="48" x2="33" y2="60" stroke="#F5F5F2" opacity="0.55"/>
+          <line x1="43.5" y1="41" x2="43.5" y2="67" stroke="#C8A24B"/>
+          <line x1="54" y1="32" x2="54" y2="76" stroke="#F5F5F2" opacity="0.85"/>
+          <line x1="64.5" y1="41" x2="64.5" y2="67" stroke="#C8A24B"/>
+          <line x1="75" y1="48" x2="75" y2="60" stroke="#F5F5F2" opacity="0.55"/>
+        </g>
+      </svg><div class="tag">方圆</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <g stroke-width="7" stroke-linecap="round">
+          <line x1="37" y1="48" x2="37" y2="60" stroke="#F5F5F2" opacity="0.55"/>
+          <line x1="46" y1="41" x2="46" y2="67" stroke="#C8A24B"/>
+          <line x1="54" y1="32" x2="54" y2="76" stroke="#F5F5F2" opacity="0.85"/>
+          <line x1="62" y1="41" x2="62" y2="67" stroke="#C8A24B"/>
+          <line x1="71" y1="48" x2="71" y2="60" stroke="#F5F5F2" opacity="0.55"/>
+        </g>
+      </svg><div class="tag">圆形</div></div>
+    </div>
+    <p>IconPark 双色线性：暖金与暖白交替、统一笔宽，层次靠色彩不靠光影。对称山形，安静耐看。</p>
+    <span class="src">语言来源：IconPark 双色 / Remix 混合</span>
+  </div>
+
+  <!-- C 混合锚点 -->
+  <div class="card">
+    <h3>C · 线 + 实心锚点（Remix 混合）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <g stroke="#C8A24B" stroke-width="7" stroke-linecap="round">
+          <line x1="34" y1="46" x2="34" y2="62"/>
+          <line x1="45" y1="40" x2="45" y2="68"/>
+        </g>
+        <rect x="55" y="31" width="7" height="46" rx="3.5" fill="#F2D894"/>
+        <g stroke="#C8A24B" stroke-width="7" stroke-linecap="round">
+          <line x1="72" y1="44" x2="72" y2="64"/>
+        </g>
+      </svg><div class="tag">方圆</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <g stroke="#C8A24B" stroke-width="7" stroke-linecap="round">
+          <line x1="38" y1="46" x2="38" y2="62"/>
+          <line x1="48" y1="40" x2="48" y2="68"/>
+        </g>
+        <rect x="57" y="33" width="7" height="42" rx="3.5" fill="#F2D894"/>
+        <g stroke="#C8A24B" stroke-width="7" stroke-linecap="round">
+          <line x1="71" y1="44" x2="71" y2="64"/>
+        </g>
+      </svg><div class="tag">圆形</div></div>
+    </div>
+    <p>Remix Icon 的 line+fill 混排：三根描边线 + 一根亮金实心柱做视觉锚点（峰值），一眼落在"高潮"上——正对应 AI 找高潮的产品故事。</p>
+    <span class="src">语言来源：Remix Icon 混合风格</span>
+  </div>
+
+  <!-- D 负空间球 -->
+  <div class="card">
+    <h3>D · 鎏金负空间（光效派）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <circle cx="54" cy="54" r="34" fill="url(#goldBall3)"/>
+        <g stroke="#241c0e" stroke-width="7" stroke-linecap="round">
+          <line x1="42" y1="48" x2="42" y2="60"/>
+          <line x1="51" y1="42" x2="51" y2="66"/>
+          <line x1="60" y1="46" x2="60" y2="62"/>
+        </g>
+        <circle cx="43" cy="41" r="7" fill="#FFF3D0" opacity="0.35"/>
+      </svg><div class="tag">方圆</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <circle cx="54" cy="54" r="36" fill="url(#goldBall3)"/>
+        <g stroke="#241c0e" stroke-width="7" stroke-linecap="round">
+          <line x1="42" y1="47" x2="42" y2="61"/>
+          <line x1="51" y1="41" x2="51" y2="67"/>
+          <line x1="60" y1="45" x2="60" y2="63"/>
+        </g>
+        <circle cx="42" cy="40" r="7" fill="#FFF3D0" opacity="0.35"/>
+      </svg><div class="tag">圆形</div></div>
+    </div>
+    <p>一色统治：鎏金球体（径向渐变+左上高光）充满画布，波形以负空间雕刻其上。远看是一颗金珠，近看藏着声波——两段式发现感。</p>
+    <span class="src">语言来源：Component Gallery 克制 + 光效</span>
+  </div>
+
+  <!-- E 鎏金均衡器精修 -->
+  <div class="card">
+    <h3>E · 鎏金均衡器·精修（光效派）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <ellipse cx="54" cy="84" rx="30" ry="10" fill="url(#glow3)"/>
+        <g stroke-linecap="round" stroke-width="7">
+          <line x1="31" y1="49" x2="31" y2="59" stroke="#8a713a"/>
+          <line x1="40" y1="43" x2="40" y2="65" stroke="url(#bar3)"/>
+          <line x1="49" y1="36" x2="49" y2="72" stroke="url(#bar3)"/>
+          <line x1="58" y1="30" x2="58" y2="78" stroke="url(#bar3)"/>
+          <line x1="67" y1="36" x2="67" y2="72" stroke="url(#bar3)"/>
+          <line x1="76" y1="43" x2="76" y2="65" stroke="url(#bar3)"/>
+        </g>
+        <circle cx="58" cy="30" r="1.8" fill="#FFF6DC" opacity="0.9"/>
+      </svg><div class="tag">方圆</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="url(#bgWarm3)"/>
+        <ellipse cx="54" cy="84" rx="26" ry="9" fill="url(#glow3)"/>
+        <g stroke-linecap="round" stroke-width="7">
+          <line x1="36" y1="49" x2="36" y2="59" stroke="#8a713a"/>
+          <line x1="44" y1="43" x2="44" y2="65" stroke="url(#bar3)"/>
+          <line x1="52" y1="36" x2="52" y2="72" stroke="url(#bar3)"/>
+          <line x1="58" y1="30" x2="58" y2="78" stroke="url(#bar3)"/>
+          <line x1="66" y1="36" x2="66" y2="72" stroke="url(#bar3)"/>
+          <line x1="74" y1="43" x2="74" y2="65" stroke="url(#bar3)"/>
+        </g>
+        <circle cx="58" cy="30" r="1.6" fill="#FFF6DC" opacity="0.9"/>
+      </svg><div class="tag">圆形</div></div>
+    </div>
+    <p>V2-A 的克制版：柱数 7→6、去掉两根高光星点、光晕减半。保留光效质感但不过度渲染。</p>
+    <span class="src">语言来源：Dribbble 音频类光效（收敛）</span>
+  </div>
+</div>
+
+<h2>主屏效果</h2>
+<div class="home"><div class="home-row">
+  <div class="app"><div class="dummy"></div><span>相册</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm3)"/><g stroke="#C8A24B" stroke-width="7" stroke-linecap="round"><line x1="36" y1="46" x2="36" y2="62"/><line x1="47" y1="38" x2="47" y2="70"/><line x1="58" y1="30" x2="58" y2="78"/><line x1="69" y1="42" x2="69" y2="66"/></g></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d2"></div><span>天气</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm3)"/><g stroke-width="7" stroke-linecap="round"><line x1="33" y1="48" x2="33" y2="60" stroke="#F5F5F2" opacity="0.55"/><line x1="43.5" y1="41" x2="43.5" y2="67" stroke="#C8A24B"/><line x1="54" y1="32" x2="54" y2="76" stroke="#F5F5F2" opacity="0.85"/><line x1="64.5" y1="41" x2="64.5" y2="67" stroke="#C8A24B"/><line x1="75" y1="48" x2="75" y2="60" stroke="#F5F5F2" opacity="0.55"/></g></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d3"></div><span>时钟</span></div>
+</div>
+<div class="home-row" style="margin-top:22px">
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm3)"/><g stroke="#C8A24B" stroke-width="7" stroke-linecap="round"><line x1="34" y1="46" x2="34" y2="62"/><line x1="45" y1="40" x2="45" y2="68"/></g><rect x="55" y="31" width="7" height="46" rx="3.5" fill="#F2D894"/><g stroke="#C8A24B" stroke-width="7" stroke-linecap="round"><line x1="72" y1="44" x2="72" y2="64"/></g></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d2"></div><span>地图</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm3)"/><circle cx="54" cy="54" r="34" fill="url(#goldBall3)"/><g stroke="#241c0e" stroke-width="7" stroke-linecap="round"><line x1="42" y1="48" x2="42" y2="60"/><line x1="51" y1="42" x2="51" y2="66"/><line x1="60" y1="46" x2="60" y2="62"/></g><circle cx="43" cy="41" r="7" fill="#FFF3D0" opacity="0.35"/></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy"></div><span>设置</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="url(#bgWarm3)"/><ellipse cx="54" cy="84" rx="30" ry="10" fill="url(#glow3)"/><g stroke-linecap="round" stroke-width="7"><line x1="31" y1="49" x2="31" y2="59" stroke="#8a713a"/><line x1="40" y1="43" x2="40" y2="65" stroke="url(#bar3)"/><line x1="49" y1="36" x2="49" y2="72" stroke="url(#bar3)"/><line x1="58" y1="30" x2="58" y2="78" stroke="url(#bar3)"/><line x1="67" y1="36" x2="67" y2="72" stroke="url(#bar3)"/><line x1="76" y1="43" x2="76" y2="65" stroke="url(#bar3)"/></g><circle cx="58" cy="30" r="1.8" fill="#FFF6DC" opacity="0.9"/></svg><span>RingMaster</span></div>
+</div></div>
+
+<div class="note">
+  <em>流派说明</em>：A/B/C 是「极简线派」（你给的图标库的语言：统一笔宽、圆头、几何、克制）——耐看、小尺寸最强、最"设计正确"；D/E 是「光效派」（Dribbble 竞品语言）——主屏跳出感强、更吸睛。<br>
+  <em>我的推荐</em>：C（线+实心锚点）——既有图标库的纪律感，又用一根实心亮金柱讲清"找高潮"的产品故事；求稳选 B，求吸睛选 D。<br>
+  <em>落地承诺</em>：全部方案只用了 Android 矢量支持的渐变/透明度特性，选中后 1:1 转自适应图标。
+</div>
+
+</body>
+</html>

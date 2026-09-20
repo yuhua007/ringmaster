@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RingMaster UI 方向预览 V1</title>
+<style>
+  :root { --bg:#0e0d0a; --fg:#F5F5F2; --acc:#C8A24B; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:#080808; color:#F5F5F2; font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; padding:40px 24px; }
+  h1 { font-size:22px; font-weight:600; margin-bottom:6px; }
+  .sub { color:#9E9E99; font-size:13px; margin-bottom:40px; }
+  .dirs { display:flex; flex-direction:column; gap:56px; }
+  .dir { display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap; }
+  .dir-head { width:220px; }
+  .dir-head h2 { font-size:17px; margin-bottom:8px; }
+  .dir-head p { font-size:12.5px; color:#9E9E99; line-height:1.7; }
+  .dir-head .src { font-size:11px; color:#6f6f68; border:1px solid rgba(255,255,255,.12); border-radius:99px; padding:2px 10px; display:inline-block; margin-top:8px; }
+  .phone { width:300px; background:#121212; border-radius:38px; padding:10px; border:1px solid rgba(255,255,255,.08); }
+  .screen { background:var(--bg); border-radius:30px; overflow:hidden; height:600px; display:flex; flex-direction:column; position:relative; }
+  .cap { text-align:center; font-size:11px; color:#5E5E5B; margin-top:10px; }
+
+  /* ---------- 共用组件基元 ---------- */
+  .bar { height:52px; display:flex; align-items:center; padding:0 18px; gap:8px; }
+  .bar .title { font-size:16px; font-weight:600; }
+  .bar .sp { flex:1; }
+  .chip { font-size:11px; color:#9E9E99; padding:4px 10px; border:1px solid rgba(255,255,255,.14); border-radius:99px; }
+  .list { flex:1; padding:8px 14px; display:flex; flex-direction:column; gap:8px; overflow:hidden; }
+  .row { display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:16px; }
+  .row .nm { font-size:14px; font-weight:500; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .row .sub2 { font-size:11px; color:#9E9E99; }
+  .row .play { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:15px; }
+  .row .ops { width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:13px; }
+  .bottom { padding:10px 14px 14px; }
+  .btn { height:48px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:14.5px; font-weight:600; gap:8px; }
+  .editor-body { flex:1; padding:10px 16px; display:flex; flex-direction:column; gap:10px; overflow:hidden; }
+  .wave { height:150px; border-radius:18px; display:flex; align-items:center; justify-content:center; gap:3px; padding:0 18px; position:relative; }
+  .wave .b { width:5px; border-radius:3px; }
+  .wave .sel { position:absolute; top:10px; bottom:10px; border-radius:10px; }
+  .wave .hd { position:absolute; top:0; bottom:0; width:16px; display:flex; align-items:flex-start; justify-content:center; }
+  .wave .hd .cap2 { width:14px; height:26px; border-radius:7px; margin-top:6px; }
+  .ctrl-row { display:flex; align-items:center; justify-content:space-between; gap:6px; }
+  .mini { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .timecode { font-family:ui-monospace,Consolas,monospace; font-size:14px; font-weight:600; letter-spacing:.5px; }
+  .fade-row { display:flex; gap:14px; }
+  .fade { flex:1; }
+  .fade .lbl { font-size:11px; color:#9E9E99; margin-bottom:4px; }
+  .track { height:4px; border-radius:2px; background:rgba(255,255,255,.12); position:relative; }
+  .track .thumb { position:absolute; top:-5px; width:14px; height:14px; border-radius:50%; }
+  .actions { display:flex; gap:10px; padding:10px 16px 14px; align-items:center; }
+  .fab { width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:19px; }
+  .action-main { flex:1; height:50px; border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:600; }
+
+  /* ============ 方向 A：鎏金工具（精修现有） ============ */
+  .A { --bg:#0E0D0A; --fg:#F5F5F2; --card:#1A1812; --card2:#232019; --acc:#C8A24B; --acc2:#E9C873; --line:rgba(255,255,255,.07); }
+  .A .row { background:var(--card); }
+  .A .play { background:var(--card2); color:var(--acc2); }
+  .A .ops { color:#9E9E99; }
+  .A .bottom .btn { background:linear-gradient(135deg,#D9B45C,#B28A35); color:#16120A; }
+  .A .wave { background:var(--card); }
+  .A .wave .sel { background:rgba(200,162,75,.14); border:1px solid rgba(200,162,75,.35); }
+  .A .wave .hd .cap2 { background:var(--acc2); }
+  .A .mini { background:var(--card2); color:var(--acc2); }
+  .A .track .thumb { background:var(--acc2); }
+  .A .fab { background:var(--card2); color:var(--acc2); }
+  .A .action-main { background:linear-gradient(135deg,#D9B45C,#B28A35); color:#16120A; }
+
+  /* ============ 方向 B：编辑部极简（高对比铺开） ============ */
+  .B { --bg:#0C0C0C; --fg:#FAFAF7; --card:transparent; --card2:#1A1A1A; --acc:#C8A24B; --acc2:#E0BE6E; --line:rgba(255,255,255,.12); }
+  .B .row { border-radius:0; border-bottom:1px solid var(--line); padding:14px 4px; }
+  .B .play { background:#1A1A1A; color:#FAFAF7; }
+  .B .ops { color:#8A8A86; }
+  .B .bottom .btn { background:transparent; border:1px solid var(--acc); color:var(--acc); }
+  .B .wave { border-radius:2px; }
+  .B .wave .sel { background:rgba(200,162,75,.18); }
+  .B .wave .hd .cap2 { background:var(--acc); }
+  .B .mini { background:transparent; color:#FAFAF7; border:1px solid var(--line); }
+  .B .track .thumb { background:var(--acc); }
+  .B .fab { background:transparent; border:1px solid var(--line); color:#FAFAF7; }
+  .B .action-main { background:var(--acc); color:#0C0C0C; }
+
+  /* ============ 方向 C：玻璃轻拟物（光感） ============ */
+  .C { --bg:#101418; --fg:#F4F6F8; --card:rgba(255,255,255,.05); --card2:rgba(255,255,255,.08); --acc:#C8A24B; --acc2:#E9C873; --line:rgba(255,255,255,.09); }
+  .C .bar { background:rgba(255,255,255,.03); backdrop-filter:blur(12px); }
+  .C .row { background:var(--card); border:1px solid var(--line); border-radius:18px; }
+  .C .play { background:linear-gradient(145deg,rgba(233,200,115,.9),rgba(200,162,75,.8)); color:#141414; box-shadow:0 4px 14px rgba(200,162,75,.35); }
+  .C .ops { color:#B8BEC4; }
+  .C .bottom .btn { background:linear-gradient(145deg,#E9C873,#C8A24B); color:#141414; box-shadow:0 6px 18px rgba(200,162,75,.30); }
+  .C .wave { background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01)); border:1px solid var(--line); }
+  .C .wave .sel { background:rgba(200,162,75,.20); border:1px solid rgba(233,200,115,.4); }
+  .C .wave .hd .cap2 { background:#E9C873; box-shadow:0 2px 8px rgba(233,200,115,.5); }
+  .C .mini { background:var(--card); border:1px solid var(--line); color:var(--acc2); }
+  .C .track .thumb { background:#E9C873; box-shadow:0 2px 6px rgba(233,200,115,.5); }
+  .C .fab { background:var(--card); border:1px solid var(--line); color:var(--acc2); }
+  .C .action-main { background:linear-gradient(145deg,#E9C873,#C8A24B); color:#141414; }
+
+  /* 波形柱生成 */
+  .A .wave .b { background:linear-gradient(180deg,#E9C873,#8a6c26); }
+  .B .wave .b { background:#3A3A3A; }
+  .C .wave .b { background:linear-gradient(180deg,#E9C873cc,#8a6c2688); }
+  .selbar { position:relative; }
+  .selbar::before { content:""; position:absolute; left:10px; right:10px; top:0; bottom:0; }
+</style>
+</head>
+<body>
+
+<h1>RingMaster · UI 方向预览 V1</h1>
+<div class="sub">三个方向 × 主界面/编辑器两屏 — 高保真 CSS 预览，选中后按此重做 Compose 主题与全部界面</div>
+
+<div class="dirs">
+
+<!-- ================= A ================= -->
+<div class="dir">
+  <div class="dir-head">
+    <h2>A · 鎏金工具</h2>
+    <p>在现有暖金暗色的基础上精修：暖黑卡片分层、金色渐变主按钮、波形金柱与选区光框、胶囊手柄。稳、耐看、品牌感强——改动量最小。</p>
+    <span class="src">延续当前设计系统 · 精修</span>
+  </div>
+  <div>
+    <div class="phone"><div class="screen A">
+      <div class="bar"><span class="title">RingMaster</span><span class="sp"></span><span class="chip">EN/中</span><span class="chip">格式自测</span></div>
+      <div class="list">
+        <div class="row"><div class="play">▶</div><div><div class="nm">逍遥仙</div><div class="sub2">34 秒 · 当前默认铃声</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">晴天</div><div class="sub2">28 秒</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">Mojito</div><div class="sub2">31 秒</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">老男孩</div><div class="sub2">30 秒</div></div><div class="ops">⋯</div></div>
+      </div>
+      <div class="bottom"><div class="btn">＋ 选一首歌，开始制作铃声</div></div>
+    </div><div class="cap">主界面</div></div>
+  </div>
+  <div>
+    <div class="phone"><div class="screen A">
+      <div class="bar"><span>‹</span><span class="title">逍遥仙.mp3</span><span class="sp"></span><span class="timecode">0:42.5 – 1:12.8</span></div>
+      <div class="editor-body">
+        <div class="wave selbar">
+          <div class="sel" style="left:18%;right:8%"></div>
+          <div class="hd" style="left:18%"><div class="cap2"></div></div>
+          <div class="hd" style="right:8%"><div class="cap2"></div></div>
+          <div class="b" style="height:24%"></div><div class="b" style="height:38%"></div><div class="b" style="height:52%"></div><div class="b" style="height:68%"></div><div class="b" style="height:82%"></div><div class="b" style="height:92%"></div><div class="b" style="height:76%"></div><div class="b" style="height:58%"></div><div class="b" style="height:44%"></div><div class="b" style="height:30%"></div>
+        </div>
+        <div class="ctrl-row"><span style="font-size:11px;color:#9E9E99">双指缩放 · 拖动平移 · 点击试听</span><div style="display:flex;gap:6px"><div class="mini">↻</div><div class="mini">↩</div><div class="mini">−</div><div class="mini">＋</div><div class="mini">⤢</div></div></div>
+        <div class="ctrl-row"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:12px;color:#9E9E99">起</span><div class="mini">−</div><div class="mini">＋</div></div><span class="timecode">0:42.5s – 1:12.8s</span><div style="display:flex;gap:6px;align-items:center"><div class="mini">−</div><div class="mini">＋</div><span style="font-size:12px;color:#9E9E99">止</span></div></div>
+        <div class="fade-row"><div class="fade"><div class="lbl">淡入 0.5s</div><div class="track"><div class="thumb" style="left:16%"></div></div></div><div class="fade"><div class="lbl">淡出 0.5s</div><div class="track"><div class="thumb" style="left:16%"></div></div></div></div>
+      </div>
+      <div class="actions"><div class="fab">✦</div><div class="fab">▶</div><div class="action-main">导出铃声</div></div>
+    </div><div class="cap">编辑器</div></div>
+  </div>
+</div>
+
+<!-- ================= B ================= -->
+<div class="dir">
+  <div class="dir-head">
+    <h2>B · 编辑部极简</h2>
+    <p>Component Gallery 语言：去掉卡片，内容直接铺开；细线分隔、无装饰阴影；金色只用于关键操作与选区；大留白、小字注释。高级感最强，但视觉冲击弱。</p>
+    <span class="src">Component Gallery · Heroicons 纪律</span>
+  </div>
+  <div>
+    <div class="phone"><div class="screen B">
+      <div class="bar"><span class="title" style="font-size:18px;letter-spacing:1px">RingMaster</span><span class="sp"></span><span class="chip">EN/中</span><span class="chip">格式自测</span></div>
+      <div class="list">
+        <div class="row"><div class="play">▶</div><div><div class="nm">逍遥仙</div><div class="sub2">34 s — default</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">晴天</div><div class="sub2">28 s</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">Mojito</div><div class="sub2">31 s</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">老男孩</div><div class="sub2">30 s</div></div><div class="ops">⋯</div></div>
+      </div>
+      <div class="bottom"><div class="btn">＋ Pick a song, make a ringtone</div></div>
+    </div><div class="cap">主界面</div></div>
+  </div>
+  <div>
+    <div class="phone"><div class="screen B">
+      <div class="bar"><span>‹</span><span class="title">逍遥仙.mp3</span><span class="sp"></span><span class="timecode">0:42.5 – 1:12.8</span></div>
+      <div class="editor-body">
+        <div class="wave" style="background:transparent">
+          <div class="sel" style="left:18%;right:8%;background:rgba(200,162,75,.16)"></div>
+          <div class="hd" style="left:18%"><div class="cap2"></div></div>
+          <div class="hd" style="right:8%"><div class="cap2"></div></div>
+          <div class="b" style="height:24%"></div><div class="b" style="height:38%"></div><div class="b" style="height:52%"></div><div class="b" style="height:68%"></div><div class="b" style="height:82%"></div><div class="b" style="height:92%"></div><div class="b" style="height:76%"></div><div class="b" style="height:58%"></div><div class="b" style="height:44%"></div><div class="b" style="height:30%"></div>
+        </div>
+        <div class="ctrl-row"><span style="font-size:11px;color:#8A8A86">Pinch · Drag · Tap</span><div style="display:flex;gap:6px"><div class="mini">↻</div><div class="mini">↩</div><div class="mini">−</div><div class="mini">＋</div><div class="mini">⤢</div></div></div>
+        <div class="ctrl-row"><span class="timecode" style="font-size:13px">0:42.5s – 1:12.8s</span><span style="font-size:11px;color:#8A8A86">Fade 0.5 / 0.5</span></div>
+        <div class="fade-row"><div class="fade"><div class="lbl">Fade in</div><div class="track"><div class="thumb" style="left:16%"></div></div></div><div class="fade"><div class="lbl">Fade out</div><div class="track"><div class="thumb" style="left:16%"></div></div></div></div>
+      </div>
+      <div class="actions"><div class="fab">✦</div><div class="fab">▶</div><div class="action-main">Export</div></div>
+    </div><div class="cap">编辑器</div></div>
+  </div>
+</div>
+
+<!-- ================= C ================= -->
+<div class="dir">
+  <div class="dir-head">
+    <h2>C · 玻璃轻拟物</h2>
+    <p>毛玻璃底栏与卡片、柔和光影、发光胶囊手柄、渐变金色主按钮——2026 流行方向，精致感与"高级感"最强，但实现成本最高（玻璃层、发光都要 Compose 原生实现）。</p>
+    <span class="src">iOS 26 Liquid Glass 参考</span>
+  </div>
+  <div>
+    <div class="phone"><div class="screen C">
+      <div class="bar"><span class="title">RingMaster</span><span class="sp"></span><span class="chip">EN/中</span><span class="chip">格式自测</span></div>
+      <div class="list">
+        <div class="row"><div class="play">▶</div><div><div class="nm">逍遥仙</div><div class="sub2">34 秒 · 当前默认铃声</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">晴天</div><div class="sub2">28 秒</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">Mojito</div><div class="sub2">31 秒</div></div><div class="ops">⋯</div></div>
+        <div class="row"><div class="play">▶</div><div><div class="nm">老男孩</div><div class="sub2">30 秒</div></div><div class="ops">⋯</div></div>
+      </div>
+      <div class="bottom"><div class="btn">＋ 选一首歌，开始制作铃声</div></div>
+    </div><div class="cap">主界面</div></div>
+  </div>
+  <div>
+    <div class="phone"><div class="screen C">
+      <div class="bar"><span>‹</span><span class="title">逍遥仙.mp3</span><span class="sp"></span><span class="timecode">0:42.5 – 1:12.8</span></div>
+      <div class="editor-body">
+        <div class="wave">
+          <div class="sel" style="left:18%;right:8%"></div>
+          <div class="hd" style="left:18%"><div class="cap2"></div></div>
+          <div class="hd" style="right:8%"><div class="cap2"></div></div>
+          <div class="b" style="height:24%"></div><div class="b" style="height:38%"></div><div class="b" style="height:52%"></div><div class="b" style="height:68%"></div><div class="b" style="height:82%"></div><div class="b" style="height:92%"></div><div class="b" style="height:76%"></div><div class="b" style="height:58%"></div><div class="b" style="height:44%"></div><div class="b" style="height:30%"></div>
+        </div>
+        <div class="ctrl-row"><span style="font-size:11px;color:#9E9E99">双指缩放 · 拖动平移 · 点击试听</span><div style="display:flex;gap:6px"><div class="mini">↻</div><div class="mini">↩</div><div class="mini">−</div><div class="mini">＋</div><div class="mini">⤢</div></div></div>
+        <div class="ctrl-row"><div style="display:flex;gap:6px;align-items:center"><span style="font-size:12px;color:#9E9E99">起</span><div class="mini">−</div><div class="mini">＋</div></div><span class="timecode">0:42.5s – 1:12.8s</span><div style="display:flex;gap:6px;align-items:center"><div class="mini">−</div><div class="mini">＋</div><span style="font-size:12px;color:#9E9E99">止</span></div></div>
+        <div class="fade-row"><div class="fade"><div class="lbl">淡入 0.5s</div><div class="track"><div class="thumb" style="left:16%"></div></div></div><div class="fade"><div class="lbl">淡出 0.5s</div><div class="track"><div class="thumb" style="left:16%"></div></div></div></div>
+      </div>
+      <div class="actions"><div class="fab">✦</div><div class="fab">▶</div><div class="action-main">导出铃声</div></div>
+    </div><div class="cap">编辑器</div></div>
+  </div>
+</div>
+
+</div>
+
+<div style="color:#5E5E5B;font-size:12px;margin-top:40px;line-height:1.9;max-width:860px">
+  <b style="color:#C8A24B">怎么选</b>：看三个方向的主屏与编辑器各一屏，凭第一感觉挑一个，也可以说"B 的列表 + A 的波形区"这种混合。<br>
+  选定后我会：按方向重写 Compose 主题（色板/圆角/间距/材质）→ 逐屏落地（主界面/编辑器/铃声库/关于/自测）→ 动效对齐（spring 参数）→ 出真机对比。<br>
+  <b style="color:#C8A24B">我的推荐</b>：A 方向——与现有品牌资产（暖金/波形/设计系统文档）衔接最顺、风险最小，C 的玻璃感可以在 A 的底子上点缀性使用（底部操作条）。
+</div>
+
+</body>
+</html>

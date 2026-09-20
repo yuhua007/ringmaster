@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>RingMaster 图标方案预览</title>
+<style>
+  body { background:#0a0a0a; color:#F5F5F2; font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; margin:0; padding:40px 24px; }
+  h1 { font-weight:600; font-size:22px; }
+  h2 { font-weight:600; font-size:15px; color:#C8A24B; margin:48px 0 16px; letter-spacing:.5px;}
+  .sub { color:#9E9E99; font-size:13px; margin-top:6px;}
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; max-width:1100px;}
+  .card { background:#161616; border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:24px; }
+  .card h3 { margin:0 0 4px; font-size:16px;}
+  .card p { margin:0; color:#9E9E99; font-size:12.5px; line-height:1.6;}
+  .icon-row { display:flex; gap:20px; align-items:center; margin:18px 0 14px;}
+  .icon { width:96px; height:96px; display:block;}
+  .squircle { border-radius:26%; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.5);}
+  .circle { border-radius:50%; overflow:hidden; box-shadow:0 8px 24px rgba(0,0,0,.5);}
+  .tag { font-size:11px; color:#5E5E5B; text-align:center; margin-top:6px;}
+  /* 主屏模拟 */
+  .home { background:linear-gradient(160deg,#1a1c22,#101216); border-radius:28px; padding:28px 22px; max-width:420px;}
+  .home-row { display:flex; justify-content:space-around; align-items:flex-start;}
+  .app { display:flex; flex-direction:column; align-items:center; gap:6px;}
+  .app .icon { width:56px; height:56px;}
+  .app span { font-size:10px; color:#cfcfc9;}
+  .dummy { width:56px; height:56px; border-radius:26%; background:#2a2c33;}
+  .dummy.d2{background:#232529}.dummy.d3{background:#2e2b33}.dummy.d4{background:#242a2b}
+  /* Splash 模拟 */
+  .splash-row { display:flex; gap:28px; flex-wrap:wrap;}
+  .phone { width:250px; height:500px; background:#121212; border:6px solid #2a2a2d; border-radius:36px; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative;}
+  .phone .icon{width:88px;height:88px;margin-bottom:22px}
+  .phone .slogan{color:#9E9E99;font-size:13px;letter-spacing:2px}
+  .note { color:#5E5E5B; font-size:12px; margin-top:24px; line-height:1.8; max-width:760px;}
+  em { color:#C8A24B; font-style:normal;}
+</style>
+</head>
+<body>
+
+<h1>RingMaster · App 图标方案</h1>
+<div class="sub">四种方案 × 两种遮罩（方圆 / 圆形）— 矢量真实渲染，选中即为最终效果</div>
+
+<!-- ══════════════ 方案 A：声波 ══════════════ -->
+<div class="grid">
+  <div class="card">
+    <h3>A · 声波（暖金）— 推荐</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <g stroke-linecap="round" stroke-width="6">
+          <line x1="30" y1="50" x2="30" y2="58" stroke="#7D6836"/>
+          <line x1="38" y1="44" x2="38" y2="64" stroke="#C8A24B"/>
+          <line x1="46" y1="37" x2="46" y2="71" stroke="#E9C873"/>
+          <line x1="54" y1="32" x2="54" y2="76" stroke="#E9C873"/>
+          <line x1="62" y1="37" x2="62" y2="71" stroke="#E9C873"/>
+          <line x1="70" y1="44" x2="70" y2="64" stroke="#C8A24B"/>
+          <line x1="78" y1="50" x2="78" y2="58" stroke="#7D6836"/>
+        </g>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <g stroke-linecap="round" stroke-width="6">
+          <line x1="34" y1="50" x2="34" y2="58" stroke="#7D6836"/>
+          <line x1="41" y1="44" x2="41" y2="64" stroke="#C8A24B"/>
+          <line x1="48" y1="37" x2="48" y2="71" stroke="#E9C873"/>
+          <line x1="54" y1="32" x2="54" y2="76" stroke="#E9C873"/>
+          <line x1="60" y1="37" x2="60" y2="71" stroke="#E9C873"/>
+          <line x1="67" y1="44" x2="67" y2="64" stroke="#C8A24B"/>
+          <line x1="74" y1="50" x2="74" y2="58" stroke="#7D6836"/>
+        </g>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>与 App 内波形编辑器的视觉语言完全同源——打开图标和打开 App 是同一个故事。三档金色做层次，中心最亮。经典、耐看、小尺寸辨识度最高。</p>
+  </div>
+
+  <!-- ══════════════ 方案 B：音符+剪切 ══════════════ -->
+  <div class="card">
+    <h3>B · 音符剪切（暖金）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <ellipse cx="45" cy="68" rx="10" ry="7.5" fill="#C8A24B" transform="rotate(-14 45 68)"/>
+        <path d="M54 66 L54 34" stroke="#C8A24B" stroke-width="6" stroke-linecap="round"/>
+        <path d="M54 34 Q70 38 70 54 Q70 61 63 64 Q68 55 54 50 Z" fill="#E9C873"/>
+        <line x1="36" y1="46" x2="72" y2="46" stroke="#F5F5F2" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <ellipse cx="46" cy="68" rx="9" ry="7" fill="#C8A24B" transform="rotate(-14 46 68)"/>
+        <path d="M54 66 L54 37" stroke="#C8A24B" stroke-width="6" stroke-linecap="round"/>
+        <path d="M54 37 Q68 41 68 55 Q68 61 62 64 Q67 55 54 51 Z" fill="#E9C873"/>
+        <line x1="39" y1="48" x2="70" y2="48" stroke="#F5F5F2" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>八分音符 + 一道白色剪切虚线，一眼讲清"剪铃声"这个核心动作。叙事性最强，但细节较多，48px 以下小尺寸时虚线可能糊。</p>
+  </div>
+
+  <!-- ══════════════ 方案 C：扩散环 ══════════════ -->
+  <div class="card">
+    <h3>C · 铃声扩散（暖金）</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <g transform="rotate(-18 54 54)" fill="none" stroke-linecap="round">
+          <circle cx="54" cy="54" r="5" fill="#E9C873" stroke="none"/>
+          <path d="M54 40 A14 14 0 1 1 68 54" stroke="#C8A24B" stroke-width="5"/>
+          <path d="M54 30 A24 24 0 1 1 78 54" stroke="#C8A24B" stroke-width="5" opacity=".65"/>
+          <path d="M54 20 A34 34 0 1 1 88 54" stroke="#C8A24B" stroke-width="5" opacity=".38"/>
+        </g>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <g transform="rotate(-18 54 54)" fill="none" stroke-linecap="round">
+          <circle cx="54" cy="54" r="5" fill="#E9C873" stroke="none"/>
+          <path d="M54 41 A13 13 0 1 1 67 54" stroke="#C8A24B" stroke-width="5"/>
+          <path d="M54 32 A22 22 0 1 1 76 54" stroke="#C8A24B" stroke-width="5" opacity=".65"/>
+          <path d="M54 23 A31 31 0 1 1 85 54" stroke="#C8A24B" stroke-width="5" opacity=".38"/>
+        </g>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>声波从中心点扩散的涟漪——"铃声响起"的意象，带一点动势。最简洁大气，商务感强；但和音频类 App 通用符号接近，独特性中等。</p>
+  </div>
+
+  <!-- ══════════════ 方案 D：声波（冷青） ══════════════ -->
+  <div class="card">
+    <h3>D · 声波（冷青）— 顺带定主色</h3>
+    <div class="icon-row">
+      <div><svg class="icon squircle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <g stroke-linecap="round" stroke-width="6">
+          <line x1="30" y1="50" x2="30" y2="58" stroke="#27837E"/>
+          <line x1="38" y1="44" x2="38" y2="64" stroke="#3FD0C9"/>
+          <line x1="46" y1="37" x2="46" y2="71" stroke="#7CE8E2"/>
+          <line x1="54" y1="32" x2="54" y2="76" stroke="#7CE8E2"/>
+          <line x1="62" y1="37" x2="62" y2="71" stroke="#7CE8E2"/>
+          <line x1="70" y1="44" x2="70" y2="64" stroke="#3FD0C9"/>
+          <line x1="78" y1="50" x2="78" y2="58" stroke="#27837E"/>
+        </g>
+      </svg><div class="tag">方圆遮罩</div></div>
+      <div><svg class="icon circle" viewBox="0 0 108 108">
+        <rect width="108" height="108" fill="#121212"/>
+        <g stroke-linecap="round" stroke-width="6">
+          <line x1="34" y1="50" x2="34" y2="58" stroke="#27837E"/>
+          <line x1="41" y1="44" x2="41" y2="64" stroke="#3FD0C9"/>
+          <line x1="48" y1="37" x2="48" y2="71" stroke="#7CE8E2"/>
+          <line x1="54" y1="32" x2="54" y2="76" stroke="#7CE8E2"/>
+          <line x1="60" y1="37" x2="60" y2="71" stroke="#7CE8E2"/>
+          <line x1="67" y1="44" x2="67" y2="64" stroke="#3FD0C9"/>
+          <line x1="74" y1="50" x2="74" y2="58" stroke="#27837E"/>
+        </g>
+      </svg><div class="tag">圆形遮罩</div></div>
+    </div>
+    <p>与方案 A 同构图、换冷青色系——选它等于把 App 主色也切到冷青。科技感更足，但音频工具用青的很多，容易撞脸。</p>
+  </div>
+</div>
+
+<!-- ══════════════ 主屏效果 ══════════════ -->
+<h2>主屏实际效果（A/B/C/D 并排混在普通图标中）</h2>
+<div class="home"><div class="home-row">
+  <div class="app"><div class="dummy"></div><span>相册</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="#121212"/><g stroke-linecap="round" stroke-width="6"><line x1="30" y1="50" x2="30" y2="58" stroke="#7D6836"/><line x1="38" y1="44" x2="38" y2="64" stroke="#C8A24B"/><line x1="46" y1="37" x2="46" y2="71" stroke="#E9C873"/><line x1="54" y1="32" x2="54" y2="76" stroke="#E9C873"/><line x1="62" y1="37" x2="62" y2="71" stroke="#E9C873"/><line x1="70" y1="44" x2="70" y2="64" stroke="#C8A24B"/><line x1="78" y1="50" x2="78" y2="58" stroke="#7D6836"/></g></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d2"></div><span>天气</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="#121212"/><ellipse cx="45" cy="68" rx="10" ry="7.5" fill="#C8A24B" transform="rotate(-14 45 68)"/><path d="M54 66 L54 34" stroke="#C8A24B" stroke-width="6" stroke-linecap="round"/><path d="M54 34 Q70 38 70 54 Q70 61 63 64 Q68 55 54 50 Z" fill="#E9C873"/><line x1="36" y1="46" x2="72" y2="46" stroke="#F5F5F2" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d3"></div><span>时钟</span></div>
+</div>
+<div class="home-row" style="margin-top:22px">
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="#121212"/><g transform="rotate(-18 54 54)" fill="none" stroke-linecap="round"><circle cx="54" cy="54" r="5" fill="#E9C873" stroke="none"/><path d="M54 40 A14 14 0 1 1 68 54" stroke="#C8A24B" stroke-width="5"/><path d="M54 30 A24 24 0 1 1 78 54" stroke="#C8A24B" stroke-width="5" opacity=".65"/><path d="M54 20 A34 34 0 1 1 88 54" stroke="#C8A24B" stroke-width="5" opacity=".38"/></g></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy d4"></div><span>地图</span></div>
+  <div class="app"><svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="#121212"/><g stroke-linecap="round" stroke-width="6"><line x1="30" y1="50" x2="30" y2="58" stroke="#27837E"/><line x1="38" y1="44" x2="38" y2="64" stroke="#3FD0C9"/><line x1="46" y1="37" x2="46" y2="71" stroke="#7CE8E2"/><line x1="54" y1="32" x2="54" y2="76" stroke="#7CE8E2"/><line x1="62" y1="37" x2="62" y2="71" stroke="#7CE8E2"/><line x1="70" y1="44" x2="70" y2="64" stroke="#3FD0C9"/><line x1="78" y1="50" x2="78" y2="58" stroke="#27837E"/></g></svg><span>RingMaster</span></div>
+  <div class="app"><div class="dummy"></div><span>设置</span></div>
+  <div class="app"><div class="dummy d2"></div><span>邮件</span></div>
+</div></div>
+
+<!-- ══════════════ Splash ══════════════ -->
+<h2>启动画面方案（基于所选图标自动生成）</h2>
+<div class="splash-row">
+  <div class="phone">
+    <svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="#121212"/><g stroke-linecap="round" stroke-width="6"><line x1="30" y1="50" x2="30" y2="58" stroke="#7D6836"/><line x1="38" y1="44" x2="38" y2="64" stroke="#C8A24B"/><line x1="46" y1="37" x2="46" y2="71" stroke="#E9C873"/><line x1="54" y1="32" x2="54" y2="76" stroke="#E9C873"/><line x1="62" y1="37" x2="62" y2="71" stroke="#E9C873"/><line x1="70" y1="44" x2="70" y2="64" stroke="#C8A24B"/><line x1="78" y1="50" x2="78" y2="58" stroke="#7D6836"/></g></svg>
+    <div class="slogan">剪出你想听的那段</div>
+  </div>
+  <div class="phone">
+    <svg class="icon squircle" viewBox="0 0 108 108"><rect width="108" height="108" fill="#121212"/><g stroke-linecap="round" stroke-width="6"><line x1="30" y1="50" x2="30" y2="58" stroke="#7D6836"/><line x1="38" y1="44" x2="38" y2="64" stroke="#C8A24B"/><line x1="46" y1="37" x2="46" y2="71" stroke="#E9C873"/><line x1="54" y1="32" x2="54" y2="76" stroke="#E9C873"/><line x1="62" y1="37" x2="62" y2="71" stroke="#E9C873"/><line x1="70" y1="44" x2="70" y2="64" stroke="#C8A24B"/><line x1="78" y1="50" x2="78" y2="58" stroke="#7D6836"/></g></svg>
+  </div>
+</div>
+<div class="sub" style="margin-top:10px">左：图标 + Slogan（有品牌记忆点）｜右：纯图标（系统默认样式，最快）</div>
+
+<div class="note">
+  <em>说明</em>：所有预览均为矢量代码直接渲染，选中后我会无损转换为 Android 自适应图标（adaptive icon：前景 + 背景两层 XML）并接入启动画面。<br>
+  <em>建议</em>：方案 D 是方案 A 的冷青版——选 D 意味着 App 主色一并切换为冷青。<br>
+  <em>我的推荐</em>：A（声波·暖金）——与 App 内波形同源、大小尺寸通吃、和"剪辑"心智直接挂钩。
+</div>
+
+</body>
+</html>
